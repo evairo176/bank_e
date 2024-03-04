@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ewallet/shared/theme.dart';
+import 'package:ewallet/ui/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -33,6 +34,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Spacer(),
             CarouselSlider(
               items: [
                 Image.asset(
@@ -66,6 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 24,
+                vertical: 24,
               ),
               padding: const EdgeInsets.symmetric(
                 horizontal: 22,
@@ -127,7 +130,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               width: double.infinity,
                               height: 24,
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignInPage(),
+                                    ),
+                                  );
+                                },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
