@@ -1,6 +1,7 @@
 import 'package:ewallet/shared/theme.dart';
+import 'package:ewallet/ui/widgets/buttons.dart';
+import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -45,52 +46,14 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // EMAIL INPUT FORM
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          contentPadding: const EdgeInsets.all(12)),
-                    )
-                  ],
-                ),
+                const CostumFormField(title: 'Email Address'),
                 const SizedBox(
                   height: 16,
                 ),
                 // PASSWORD INPUT FORM
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          contentPadding: const EdgeInsets.all(12)),
-                    )
-                  ],
+                const CostumFormField(
+                  title: 'Password',
+                  obscureText: true,
                 ),
                 const SizedBox(
                   height: 8,
@@ -107,47 +70,23 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
+                CostumFilledButton(
+                  title: 'Sign In',
                   width: double.infinity,
                   height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: purpleColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(56),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
-                )
+                  onPressed: () {},
+                ),
               ],
             ),
           ),
           const SizedBox(
             height: 50,
           ),
-          SizedBox(
+          CostumTextButton(
+            title: 'Create New Account',
             width: double.infinity,
             height: 24,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-            ),
+            onPressed: () {},
           ),
           const SizedBox(
             height: 81,
