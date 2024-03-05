@@ -44,7 +44,7 @@ class SignInPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // EMAIL INPUT
+                // EMAIL INPUT FORM
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -69,7 +69,7 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                // PASSWORD INPUT
+                // PASSWORD INPUT FORM
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
