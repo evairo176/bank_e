@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:ewallet/shared/theme.dart';
-import 'package:ewallet/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {

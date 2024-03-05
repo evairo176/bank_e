@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ewallet/shared/theme.dart';
-import 'package:ewallet/ui/pages/sign_in_page.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +104,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                           children: [
                             CostumFilledButton(
                               title: 'Get Started',
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/sign-up');
+                              },
                             ),
                             const SizedBox(
                               height: 20,
