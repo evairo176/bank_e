@@ -1,6 +1,5 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
-import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignUpSetIdCardPage extends StatelessWidget {
