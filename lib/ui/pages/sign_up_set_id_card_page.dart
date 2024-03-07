@@ -87,7 +87,9 @@ class SignUpSetIdCardPage extends StatelessWidget {
                   title: 'Continue',
                   width: double.infinity,
                   height: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-success');
+                  },
                 ),
               ],
             ),
@@ -99,7 +101,9 @@ class SignUpSetIdCardPage extends StatelessWidget {
             title: 'Skip for Now',
             width: double.infinity,
             height: 24,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/sign-up-success');
+            },
           ),
           const SizedBox(
             height: 81,

@@ -74,7 +74,13 @@ class SignInPage extends StatelessWidget {
                   title: 'Sign In',
                   width: double.infinity,
                   height: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
                 ),
               ],
             ),
