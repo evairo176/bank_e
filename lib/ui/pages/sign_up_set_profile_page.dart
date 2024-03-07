@@ -83,7 +83,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                // PIN INPUT
+                // PIN INPUT FORM
                 const CostumFormField(title: 'Set PIN (6 digit number)'),
                 const SizedBox(
                   height: 30,
