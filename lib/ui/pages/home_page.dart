@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -83,6 +84,7 @@ class HomePage extends StatelessWidget {
         children: [
           buildProfile(),
           buildWalletCard(),
+          buildLevel(),
         ],
       ),
     );
@@ -195,6 +197,61 @@ class HomePage extends StatelessWidget {
             style: whiteTextStyle.copyWith(
               fontSize: 24,
               fontWeight: semiBold,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildLevel() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 20,
+      ),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: whiteColor,
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: medium,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '55%',
+                style: greenTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: semiBold,
+                ),
+              ),
+              Text(
+                ' of Rp 20.000',
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: semiBold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: LinearProgressIndicator(
+              minHeight: 5,
+              value: 0.55,
+              valueColor: AlwaysStoppedAnimation(greenColor),
+              backgroundColor: lightBackgroundColor,
             ),
           )
         ],
