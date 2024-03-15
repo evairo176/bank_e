@@ -1,5 +1,6 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -81,6 +82,7 @@ class HomePage extends StatelessWidget {
         ),
         children: [
           buildProfile(),
+          buildWalletCard(),
         ],
       ),
     );
@@ -139,6 +141,60 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildWalletCard() {
+    return Container(
+      width: double.infinity,
+      height: 220,
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      padding: const EdgeInsets.all(30),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        image: const DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage('assets/image_bg_card.png'),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Shayna Hanna',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
+          const SizedBox(
+            height: 28,
+          ),
+          Text(
+            '**** **** **** 1288',
+            style: whiteTextStyle.copyWith(
+                fontSize: 18, fontWeight: medium, letterSpacing: 6),
+          ),
+          const SizedBox(
+            height: 21,
+          ),
+          Text(
+            'Balance',
+            style: whiteTextStyle.copyWith(
+              fontSize: 14,
+            ),
+          ),
+          Text(
+            'Rp 12.500',
+            style: whiteTextStyle.copyWith(
+              fontSize: 24,
+              fontWeight: semiBold,
             ),
           )
         ],
