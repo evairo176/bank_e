@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/theme.dart';
+import 'package:ewallet/ui/widgets/home_latest_tranasactions_item.dart';
 import 'package:ewallet/ui/widgets/home_service_item.dart';
 import 'package:flutter/material.dart';
 
@@ -85,6 +86,7 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildService(),
+          buildLatesTransactions(),
         ],
       ),
     );
@@ -301,6 +303,70 @@ class HomePage extends StatelessWidget {
                 onTap: () {},
               ),
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildLatesTransactions() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transactions',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Container(
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: whiteColor,
+            ),
+            child: const Column(
+              children: [
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png',
+                  title: 'Top Up',
+                  date: 'Yesterday',
+                  value: '+ 450.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png',
+                  title: 'Cashback',
+                  date: 'Sep 11',
+                  value: '+ 22.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png',
+                  title: 'Withdraw',
+                  date: 'Sep 2',
+                  value: '- 5.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png',
+                  title: 'Transfer',
+                  date: 'Aug 27',
+                  value: '- 123.500',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat5.png',
+                  title: 'Electric',
+                  date: 'Feb 18',
+                  value: '- 12.300.000',
+                ),
+              ],
+            ),
           )
         ],
       ),
