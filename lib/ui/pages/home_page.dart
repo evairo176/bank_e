@@ -1,7 +1,9 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/home_latest_tranasactions_item.dart';
 import 'package:ewallet/ui/widgets/home_service_item.dart';
+import 'package:ewallet/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -87,6 +89,7 @@ class HomePage extends StatelessWidget {
           buildLevel(),
           buildService(),
           buildLatesTransactions(),
+          buildSendAgain(),
         ],
       ),
     );
@@ -364,6 +367,52 @@ class HomePage extends StatelessWidget {
                   title: 'Electric',
                   date: 'Feb 18',
                   value: '- 12.300.000',
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                HomeUserItem(
+                  imageUrl: 'assets/image_friend1.png',
+                  username: 'adinda77',
+                ),
+                HomeUserItem(
+                  imageUrl: 'assets/image_friend2.png',
+                  username: 'yunita002',
+                ),
+                HomeUserItem(
+                  imageUrl: 'assets/image_friend3.png',
+                  username: 'andre156',
+                ),
+                HomeUserItem(
+                  imageUrl: 'assets/image_friend4.png',
+                  username: 'keny886',
                 ),
               ],
             ),
