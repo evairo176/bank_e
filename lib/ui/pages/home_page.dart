@@ -1,6 +1,7 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/home_latest_tranasactions_item.dart';
 import 'package:ewallet/ui/widgets/home_service_item.dart';
+import 'package:ewallet/ui/widgets/home_tips_item.dart';
 import 'package:ewallet/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -90,6 +91,7 @@ class HomePage extends StatelessWidget {
           buildService(),
           buildLatesTransactions(),
           buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
@@ -413,6 +415,57 @@ class HomePage extends StatelessWidget {
                 HomeUserItem(
                   imageUrl: 'assets/image_friend4.png',
                   username: 'keny886',
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildFriendlyTips() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30, bottom: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              runAlignment: WrapAlignment.spaceAround,
+              runSpacing: 18,
+              children: [
+                HomeTipsItem(
+                  imageUrl: 'assets/image_tips1.png',
+                  title: 'Best tips for using a credit card',
+                  url: 'https://www.google.co.id/?hl=id',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/image_tips2.png',
+                  title: 'Spot the good pie of finance model',
+                  url: 'https://www.google.co.id/?hl=id',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/image_tips3.png',
+                  title: 'Great hack to get better advices',
+                  url: 'https://www.google.co.id/?hl=id',
+                ),
+                HomeTipsItem(
+                  imageUrl: 'assets/image_tips4.png',
+                  title: 'Save more penny buy this instead',
+                  url: 'https://www.google.co.id/?hl=id',
                 ),
               ],
             ),
