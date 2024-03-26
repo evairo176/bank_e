@@ -3,9 +3,7 @@ import 'package:ewallet/ui/widgets/home_latest_tranasactions_item.dart';
 import 'package:ewallet/ui/widgets/home_service_item.dart';
 import 'package:ewallet/ui/widgets/home_tips_item.dart';
 import 'package:ewallet/ui/widgets/home_user_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -88,7 +86,7 @@ class HomePage extends StatelessWidget {
           buildProfile(context),
           buildWalletCard(),
           buildLevel(),
-          buildService(),
+          buildService(context),
           buildLatesTransactions(),
           buildSendAgain(),
           buildFriendlyTips(),
@@ -271,7 +269,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildService() {
+  Widget buildService(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
         top: 30,
@@ -295,7 +293,9 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/ic_topup.png',
                 title: 'Top Up',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/topup');
+                },
               ),
               HomeServiceItem(
                 iconUrl: 'assets/ic_send.png',

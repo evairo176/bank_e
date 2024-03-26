@@ -78,7 +78,7 @@ class CustomTextButton extends StatelessWidget {
 class CustomNumberPinButton extends StatelessWidget {
   final String title;
   final VoidCallback? onTap;
-  final bool? isBackIcon;
+  final bool isBackIcon;
 
   const CustomNumberPinButton({
     super.key,
@@ -97,18 +97,18 @@ class CustomNumberPinButton extends StatelessWidget {
         decoration:
             BoxDecoration(shape: BoxShape.circle, color: numberBackgroundColor),
         child: Center(
-          child: isBackIcon != true
-              ? Text(
+          child: isBackIcon
+              ? Icon(
+                  Icons.arrow_back,
+                  color: whiteColor,
+                  size: 24,
+                )
+              : Text(
                   title,
                   style: whiteTextStyle.copyWith(
                     fontSize: 22,
                     fontWeight: semiBold,
                   ),
-                )
-              : Icon(
-                  Icons.arrow_back,
-                  color: whiteColor,
-                  size: 24,
                 ),
         ),
       ),

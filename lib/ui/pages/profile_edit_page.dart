@@ -56,7 +56,13 @@ class ProfileEditPage extends StatelessWidget {
                   title: 'Update Now',
                   width: double.infinity,
                   height: 50,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/profile-edit-success',
+                      (route) => false,
+                    );
+                  },
                 ),
               ],
             ),
