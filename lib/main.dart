@@ -2,6 +2,7 @@ import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/pages/home_page.dart';
 import 'package:ewallet/ui/pages/onboarding_page.dart';
 import 'package:ewallet/ui/pages/pin_page.dart';
+import 'package:ewallet/ui/pages/profile_edit_page.dart';
 import 'package:ewallet/ui/pages/profile_page.dart';
 import 'package:ewallet/ui/pages/sign_in_page.dart';
 import 'package:ewallet/ui/pages/sign_up_page.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
         '/pin': (context) => const PinPage(),
+        '/profile-edit': (context) => const ProfileEditPage(),
       },
     );
   }
