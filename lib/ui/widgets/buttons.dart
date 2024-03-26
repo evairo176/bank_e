@@ -2,13 +2,13 @@ import "package:flutter/material.dart";
 
 import "../../shared/theme.dart";
 
-class CostumFilledButton extends StatelessWidget {
+class CustomFilledButton extends StatelessWidget {
   final String title;
   final double width;
   final double height;
   final VoidCallback? onPressed;
 
-  const CostumFilledButton({
+  const CustomFilledButton({
     super.key,
     required this.title,
     this.width = double.infinity,
@@ -40,13 +40,13 @@ class CostumFilledButton extends StatelessWidget {
   }
 }
 
-class CostumTextButton extends StatelessWidget {
+class CustomTextButton extends StatelessWidget {
   final String title;
   final double width;
   final double height;
   final VoidCallback? onPressed;
 
-  const CostumTextButton({
+  const CustomTextButton({
     super.key,
     required this.title,
     this.width = double.infinity,
@@ -69,6 +69,47 @@ class CostumTextButton extends StatelessWidget {
           style: greyTextStyle.copyWith(
             fontSize: 16,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomNumberPinButton extends StatelessWidget {
+  final String title;
+  final VoidCallback? onTap;
+  final bool? isBackIcon;
+
+  const CustomNumberPinButton({
+    super.key,
+    required this.title,
+    this.onTap,
+    this.isBackIcon = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 60,
+        width: 60,
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: numberBackgroundColor),
+        child: Center(
+          child: isBackIcon != true
+              ? Text(
+                  title,
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 22,
+                    fontWeight: semiBold,
+                  ),
+                )
+              : Icon(
+                  Icons.arrow_back,
+                  color: whiteColor,
+                  size: 24,
+                ),
         ),
       ),
     );

@@ -83,14 +83,14 @@ class SignUpSetProfilePage extends StatelessWidget {
                   height: 16,
                 ),
                 // PIN INPUT FORM
-                const CostumFormField(
+                const CustomFormField(
                   title: 'Set PIN (6 digit number)',
                   obscureText: true,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                CostumFilledButton(
+                CustomFilledButton(
                   title: 'Continue',
                   width: double.infinity,
                   height: 50,

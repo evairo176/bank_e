@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
 
-class CostumFormField extends StatelessWidget {
+class CustomFormField extends StatelessWidget {
   final String title;
   final bool obscureText;
   final TextEditingController? controller;
 
-  const CostumFormField({
+  const CustomFormField({
     super.key,
     required this.title,
     this.obscureText = false,

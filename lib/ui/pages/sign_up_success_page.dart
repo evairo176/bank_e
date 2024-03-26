@@ -33,7 +33,7 @@ class SignUpSuccessPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            CostumFilledButton(
+            CustomFilledButton(
               title: 'Get Started',
               width: 183,
               height: 50,

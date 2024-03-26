@@ -81,7 +81,7 @@ class SignUpSetIdCardPage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                CostumFilledButton(
+                CustomFilledButton(
                   title: 'Continue',
                   width: double.infinity,
                   height: 50,
@@ -95,7 +95,7 @@ class SignUpSetIdCardPage extends StatelessWidget {
           const SizedBox(
             height: 60,
           ),
-          CostumTextButton(
+          CustomTextButton(
             title: 'Skip for Now',
             width: double.infinity,
             height: 24,

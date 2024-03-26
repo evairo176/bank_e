@@ -101,7 +101,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            CostumFilledButton(
+                            CustomFilledButton(
                               title: 'Get Started',
                               onPressed: () {
                                 Navigator.pushNamed(context, '/sign-up');
@@ -110,7 +110,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             const SizedBox(
                               height: 20,
                             ),
-                            CostumTextButton(
+                            CustomTextButton(
                               title: 'Sign In',
                               width: double.infinity,
                               height: 24,
@@ -162,7 +162,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               ),
                             ),
                             const Spacer(),
-                            CostumFilledButton(
+                            CustomFilledButton(
                               title: "Continue",
                               onPressed: () {
                                 carouselController.nextPage();
