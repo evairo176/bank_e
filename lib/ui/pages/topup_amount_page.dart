@@ -1,6 +1,8 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+import 'package:intl/intl.dart';
 
 class TopupAmountPage extends StatefulWidget {
   const TopupAmountPage({super.key});
@@ -12,6 +14,26 @@ class TopupAmountPage extends StatefulWidget {
 class _TopupAmountPageState extends State<TopupAmountPage> {
   final TextEditingController amountController =
       TextEditingController(text: '0');
+
+  @override
+  void initState() {
+    super.initState();
+
+    amountController.addListener(() {
+      final text = amountController.text;
+
+      if (text.isNotEmpty) {
+        amountController.value = amountController.value.copyWith(
+            text: NumberFormat.currency(
+          locale: 'id',
+          decimalDigits: 0,
+          symbol: '',
+        ).format(int.parse(text.replaceAll('.', ''))));
+      }
+
+      print(text);
+    });
+  }
 
   addAmount(String number) {
     if (amountController.text == '0') {
@@ -32,6 +54,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
       setState(() {
         amountController.text = amountController.text
             .substring(0, amountController.text.length - 1);
+
         if (amountController.text == '') {
           amountController.text = '0';
         }
@@ -181,7 +204,19 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
           ),
           CustomFilledButton(
             title: 'Checkout Now',
-            onPressed: () {},
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                await launchUrlString('https://demo.midtrans.com/');
+
+                if (context.mounted) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/topup-success',
+                    (route) => false,
+                  );
+                }
+              }
+            },
           ),
           const SizedBox(
             height: 25,

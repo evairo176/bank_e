@@ -2,8 +2,8 @@ import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-class ProfileEditSuccessPage extends StatelessWidget {
-  const ProfileEditSuccessPage({super.key});
+class TopupSuccessPage extends StatelessWidget {
+  const TopupSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Nice Update!',
+              'Top Up \nWallet Berhasil',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -24,7 +24,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
               height: 26,
             ),
             Text(
-              'Your data is safe with\nour system',
+              'Use the money wisely and\ngrow your finance',
               style: greyTextStyle.copyWith(
                 fontSize: 16,
               ),
