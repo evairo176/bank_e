@@ -4,81 +4,108 @@ import 'package:ewallet/ui/widgets/home_service_item.dart';
 import 'package:ewallet/ui/widgets/home_tips_item.dart';
 import 'package:ewallet/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
+import 'package:scroll_to_hide/scroll_to_hide.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
 // buttom navigation
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: lightBackgroundColor,
-        shape: const CircularNotchedRectangle(),
-        clipBehavior: Clip.antiAlias,
-        notchMargin: 8,
-        padding: const EdgeInsets.all(0),
-        elevation: 0,
-        child: BottomNavigationBar(
-          backgroundColor: whiteColor,
-          type: BottomNavigationBarType.fixed,
+      bottomNavigationBar: ScrollToHide(
+        scrollController: _scrollController,
+        height: 70, // Initial height of the bottom navigation bar.
+        hideDirection: Axis.vertical,
+        duration: const Duration(milliseconds: 300),
+        child: BottomAppBar(
+          color: lightBackgroundColor,
+          shape: const CircularNotchedRectangle(),
+          clipBehavior: Clip.antiAlias,
+          notchMargin: 8,
+          padding: const EdgeInsets.all(0),
           elevation: 0,
-          selectedItemColor: blueColor,
-          unselectedItemColor: blackColor,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          selectedLabelStyle: blueTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
+          child: BottomNavigationBar(
+            backgroundColor: whiteColor,
+            type: BottomNavigationBarType.fixed,
+            elevation: 0,
+            selectedItemColor: blueColor,
+            unselectedItemColor: blackColor,
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            selectedLabelStyle: blueTextStyle.copyWith(
+              fontSize: 10,
+              fontWeight: medium,
+            ),
+            unselectedLabelStyle: blackTextStyle.copyWith(
+              fontSize: 10,
+              fontWeight: medium,
+            ),
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/ic_overview.png',
+                  width: 20,
+                  color: blueColor,
+                ),
+                label: 'Overview',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/ic_history.png',
+                  width: 20,
+                ),
+                label: 'History',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/ic_statistic.png',
+                  width: 20,
+                ),
+                label: 'Statistic',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/ic_reward.png',
+                  width: 20,
+                ),
+                label: 'Reward',
+              ),
+            ],
           ),
-          unselectedLabelStyle: blackTextStyle.copyWith(
-            fontSize: 10,
-            fontWeight: medium,
-          ),
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_overview.png',
-                width: 20,
-                color: blueColor,
-              ),
-              label: 'Overview',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_history.png',
-                width: 20,
-              ),
-              label: 'History',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_statistic.png',
-                width: 20,
-              ),
-              label: 'Statistic',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/ic_reward.png',
-                width: 20,
-              ),
-              label: 'Reward',
-            ),
-          ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: purpleColor,
-        shape: const CircleBorder(),
-        child: Image.asset(
-          'assets/ic_add.png',
-          width: 24,
+      floatingActionButton: ScrollToHide(
+        scrollController: _scrollController,
+        height: 24,
+        hideDirection: Axis.vertical,
+        duration: const Duration(milliseconds: 300),
+        child: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: purpleColor,
+          shape: const CircleBorder(),
+          child: Image.asset(
+            'assets/ic_add.png',
+            width: 24,
+          ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
+        controller: _scrollController,
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
         ),
@@ -300,7 +327,9 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/ic_send.png',
                 title: 'Send',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/transfer');
+                },
               ),
               HomeServiceItem(
                 iconUrl: 'assets/ic_withdraw.png',
