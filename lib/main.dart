@@ -1,4 +1,5 @@
 import 'package:ewallet/shared/theme.dart';
+import 'package:ewallet/ui/pages/data_provider.dart';
 import 'package:ewallet/ui/pages/home_page.dart';
 import 'package:ewallet/ui/pages/onboarding_page.dart';
 import 'package:ewallet/ui/pages/pin_page.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: lightBackgroundColor,
         appBarTheme: AppBarTheme(
-          backgroundColor: lightBackgroundColor,
+          backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
           iconTheme: IconThemeData(
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
         '/transfer': (context) => const TransferPage(),
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
+        '/data-provider': (context) => const DataProviderPage(),
       },
     );
   }
