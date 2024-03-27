@@ -30,8 +30,6 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
           symbol: '',
         ).format(int.parse(text.replaceAll('.', ''))));
       }
-
-      print(text);
     });
   }
 

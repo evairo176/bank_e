@@ -15,6 +15,7 @@ import 'package:ewallet/ui/pages/splash_page.dart';
 import 'package:ewallet/ui/pages/topup_amount_page.dart';
 import 'package:ewallet/ui/pages/topup_page.dart';
 import 'package:ewallet/ui/pages/topup_success_page.dart';
+import 'package:ewallet/ui/pages/transfer_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -27,19 +28,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          scaffoldBackgroundColor: lightBackgroundColor,
-          appBarTheme: AppBarTheme(
-            backgroundColor: lightBackgroundColor,
-            elevation: 0,
-            centerTitle: true,
-            iconTheme: IconThemeData(
-              color: blackColor,
-            ),
-            titleTextStyle: blackTextStyle.copyWith(
-              fontSize: 20,
-              fontWeight: semiBold,
-            ),
-          )),
+        scaffoldBackgroundColor: lightBackgroundColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: lightBackgroundColor,
+          elevation: 0,
+          centerTitle: true,
+          iconTheme: IconThemeData(
+            color: blackColor,
+          ),
+          titleTextStyle: blackTextStyle.copyWith(
+            fontSize: 20,
+            fontWeight: semiBold,
+          ),
+        ),
+      ),
       routes: {
         '/': (context) => const SplashPage(),
         '/onboarding': (context) => const OnBoardingPage(),
@@ -57,6 +59,7 @@ class MyApp extends StatelessWidget {
         '/topup': (context) => const TopupPage(),
         '/topup-amount': (context) => const TopupAmountPage(),
         '/topup-success': (context) => const TopupSuccessPage(),
+        '/transfer': (context) => const TransferPage(),
       },
     );
   }
