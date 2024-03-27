@@ -1,6 +1,6 @@
 import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
-import 'package:ewallet/ui/widgets/provider_item.dart';
+import 'package:ewallet/ui/widgets/data_provider_item.dart';
 import 'package:flutter/material.dart';
 
 class DataProviderPage extends StatelessWidget {
@@ -96,7 +96,7 @@ class DataProviderPage extends StatelessWidget {
           CustomFilledButton(
             title: 'Continue',
             onPressed: () {
-              Navigator.pushNamed(context, '/topup-amount');
+              Navigator.pushNamed(context, '/data-package');
             },
           ),
           const SizedBox(
