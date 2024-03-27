@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: ScrollToHide(
         scrollController: _scrollController,
-        height: 24,
+        // height: 24,
         hideDirection: Axis.vertical,
         duration: const Duration(milliseconds: 300),
         child: FloatingActionButton(
