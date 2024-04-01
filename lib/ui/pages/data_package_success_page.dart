@@ -2,8 +2,8 @@ import 'package:ewallet/shared/theme.dart';
 import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-class TopupSuccessPage extends StatelessWidget {
-  const TopupSuccessPage({super.key});
+class DataPackageSuccessPage extends StatelessWidget {
+  const DataPackageSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class TopupSuccessPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Top Up \nWallet Berhasil',
+              'Paket Data\nBerhasil Terbeli',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,

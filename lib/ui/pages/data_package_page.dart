@@ -1,7 +1,9 @@
 import 'package:ewallet/shared/theme.dart';
+import 'package:ewallet/ui/widgets/buttons.dart';
 import 'package:ewallet/ui/widgets/data_package_item.dart';
 import 'package:ewallet/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class DataPackagePage extends StatelessWidget {
   const DataPackagePage({super.key});
@@ -35,6 +37,28 @@ class DataPackagePage extends StatelessWidget {
             isShowTitle: false,
           ),
           buildResultUser(),
+          const SizedBox(
+            height: 85,
+          ),
+          CustomFilledButton(
+            title: 'Continue',
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                await launchUrlString('https://demo.midtrans.com/');
+
+                if (context.mounted) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/data-package-success',
+                    (route) => false,
+                  );
+                }
+              }
+            },
+          ),
+          const SizedBox(
+            height: 50,
+          ),
         ],
       ),
     );
@@ -50,7 +74,7 @@ class DataPackagePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Result',
+            'Select Package',
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
